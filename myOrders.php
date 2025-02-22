@@ -17,7 +17,7 @@
 	<!-- Navbar Section starts -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
+			<a class="navbar-brand" href="./index.php"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -97,11 +97,7 @@
 								echo '<td>' . $row["status"] . '</td>';
 								echo '<td>';
 								echo '<a href="./cancelOrder.php?id=' . $row["order_id"] . '" class="btn btn-danger">Cancel</a>';
-								if ($row["Payment"] == 0) {
-									echo '<a href="./Payment.php?id=' . $row["order_id"] . '" class="btn btn-success">Pay</a>';
-								} else {
-									echo '<span class="btn btn-success disabled">Already Paid</span>';
-								}
+								// Removed the "Pay" button section
 								echo '</td>';
 								echo '</tr>';
 							}
