@@ -29,8 +29,8 @@
           <?php if($admin){
             echo '<a class="nav-link" href="./panel.php">Panel</a>';
           }?>
-          <a class="nav-link" href="#">Help</a>
-          <a class="nav-link" href="#">FAQ</a>
+          <a class="nav-link" href="./help.php">Help</a>
+          <a class="nav-link" href="./faq.php">FAQ</a>
           <a class="nav-link" href="./aboutus.php">About Us</a>
         </div>
         <span class="navbar-text">
@@ -77,7 +77,7 @@
       <form class="col-lg-7 col-md-12 text-black" action="./php/order.php" method="post">
         <h4 class="card-title"><?php echo $name;?></h5>
         <p class="card-text"><?php echo $description;?></p>
-        <h5>Price:<?php echo $price;?> + Rs.100 Delivery</h5>
+        <h5>Price:<?php echo $price;?> </h5>
         <h5>Quantity:</h5>
         <div class="row align-items-center">
           <div class="col-auto p-1">
@@ -91,8 +91,8 @@
           </div>
         </div>
         <h5 class="pt-3">Cost</h5>
-        <p id="cost">Rs.<?php echo $price + 100;?></p>
-        <input type="hidden" name="cost" id="hiddenCost" value="<?php echo $price + 100;?>" />
+        <p id="cost">Rs.<?php echo $price;?></p>
+        <input type="hidden" name="cost" id="hiddenCost" value="<?php echo $price;?>" />
         <input type="hidden" name="id" value="<?php echo $id;?>"/>
         <button type="submit" class="btn btn-primary">
             Order now
@@ -125,7 +125,7 @@
         var quantityInput = document.getElementById("quantity");
         var quantity = parseInt(quantityInput.value);
         var price = <?php echo $price;?>;
-        var cost = price * quantity + 100;
+        var cost = price * quantity;
         var costParagraph = document.getElementById("cost");
         var hiddenCostInput = document.getElementById("hiddenCost");
         costParagraph.innerHTML = "Rs." + cost;
