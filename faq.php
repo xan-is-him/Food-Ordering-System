@@ -83,7 +83,6 @@
     </style>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
@@ -96,7 +95,7 @@
                     <a class="nav-link" href="./search.php">Foods</a>
                     <a class="nav-link" href="./myOrders.php">My Orders</a>
                     <?php if($admin){ echo '<a class="nav-link" href="./panel.php">Panel</a>'; }?>
-                    <a class="nav-link" href="./help.php">Help</a>
+                    <a class="nav-link" href="help.php">Help</a>
                     <a class="nav-link active" href="./faq.php">FAQ</a>
                     <a class="nav-link" href="./aboutus.php">About Us</a>
                 </div>
@@ -113,35 +112,25 @@
             <div class="faq-category">General Questions</div>
             <div class="faq-item">
                 <button class="faq-question">How do I place an order using this system? <span class="toggle-icon">+</span></button>
-                <div class="faq-answer">
-                    <p>You can browse the menu on the screen, select your items, customize them if needed, and proceed to checkout. After payment, your order will be sent directly to the kitchen.</p>
-                </div>
+                <div class="faq-answer">You can browse the menu on the screen, select your items, customize them if needed, and proceed to checkout. After checkout confirmation, your order will be sent directly to the kitchen.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Is my order automatically sent to the kitchen? <span class="toggle-icon">+</span></button>
-                <div class="faq-answer">
-                    <p>Yes, once you confirm, your order is immediately sent to the kitchen, reducing wait times.</p>
-                </div>
+                <div class="faq-answer">Yes, once you confirm, your order is immediately sent to the kitchen, reducing wait times.</div>
             </div>
             <div class="faq-category">Menu & Customization</div>
             <div class="faq-item">
                 <button class="faq-question">I have food allergies. How can I check for allergens in the menu items? <span class="toggle-icon">+</span></button>
-                <div class="faq-answer">
-                    <p>Each menu item includes a description. If you need more details, please ask a staff member.</p>
-                </div>
+                <div class="faq-answer">Each menu item includes a description. If you need more details, please ask a staff member.</div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Do you offer vegetarian, vegan, or gluten-free options? <span class="toggle-icon">+</span></button>
-                <div class="faq-answer">
-                    <p>Yes, you can filter the menu for vegetarian, vegan, and gluten-free options while ordering.</p>
-                </div>
+                <div class="faq-answer">Yes, you can filter the menu for vegetarian, vegan, and gluten-free options while ordering.</div>
             </div>
             <div class="faq-category">Payment & Pricing</div>
             <div class="faq-item">
                 <button class="faq-question">What payment methods do you accept? <span class="toggle-icon">+</span></button>
-                <div class="faq-answer">
-                    <p>We accept credit/debit cards, mobile payments (Apple Pay, Google Pay), and cash for in-person orders.</p>
-                </div>
+                <div class="faq-answer">We accept credit/debit cards, mobile payments (Khalti, IME Pay, Esewa, Nepal Pay), e-banking platforms and cash for in-person orders.</div>
             </div>
         </div>
     </div>
@@ -149,5 +138,15 @@
     <footer>
         <p>&copy; 2025 Online Food Ordering System. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll(".faq-question").forEach(button => {
+            button.addEventListener("click", () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === "block" ? "none" : "block";
+                button.querySelector(".toggle-icon").textContent = answer.style.display === "block" ? "-" : "+";
+            });
+        });
+    </script>
 </body>
 </html>
