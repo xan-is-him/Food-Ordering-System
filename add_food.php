@@ -61,6 +61,13 @@
     <!-- Include Bootstrap Icons for sidebar icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        /* General Reset for Margin and Padding */
+        body {
+            margin: 0; /* Remove margin for the body */
+            padding: 0; /* Remove padding for the body */
+            padding-top: 3px; /* Add 12px padding to the top */
+        }
+
         /* Sidebar Styling */
         .sidebar {
             background-color: #f8f9fa; /* Light background for the sidebar */
@@ -71,18 +78,22 @@
         }
 
         .sidebar .nav-link {
-            font-size: 16px;
+            font-size: 16px; /* Font size from first code */
             font-weight: 500;
             padding: 15px 20px;
             color: #495057; /* Text color */
         }
+        .navbar {
+          margin-bottom: 3px;
+         }
+        
 
         .sidebar .nav-link:hover {
             background-color: #007bff;
             color: white;
             border-radius: 5px;
         }
-
+        
         .sidebar .nav-link.active {
             background-color: #007bff;
             color: white;
@@ -90,6 +101,40 @@
 
         .sidebar i {
             margin-right: 10px; /* Space between icon and text */
+        }
+
+        /* Main Content Styling */
+        main {
+            background-color: #ffffff; /* White background for main content */
+            padding: 20px; /* Padding for content */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            font-size: 20px; /* Font size from first code */
+        }
+
+        main h1 {
+            font-size: 30px; /* Slightly larger font size for headings */
+            margin-bottom: 20px; /* Space below the heading */
+            color: #343a40; /* Dark text color for the heading */
+            border-bottom: 1px solid #ddd; /* Thinner grey line under the heading */
+            padding-bottom: 15px; /* Added 5px more space between the line and the heading */
+        }
+
+        .form-label {
+            font-size: 16px; /* Font size for labels */
+        }
+
+        .form-control {
+            font-size: 16px; /* Font size for input fields */
+        }
+
+        /* Form Styling */
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            font-size: 16px; /* Font size for buttons */
         }
     </style>
 </head>
