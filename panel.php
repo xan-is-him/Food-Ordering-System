@@ -23,6 +23,8 @@
         body {
             margin: 0; /* Remove margin for the body */
             padding: 0; /* Remove padding for the body */
+            padding-left: 12px; /* Add 12px padding to the left */
+            padding-right: 12px; /* Add 12px padding to the right */
         }
 
         /* Sidebar Styling */
@@ -80,7 +82,7 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
+            <a class="navbar-brand" href="./index.php"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -90,7 +92,7 @@
                     <a class="nav-link" href="./search.php">Foods</a>
                     <a class="nav-link" href="./myOrders.php">My Orders</a>
                     <?php if($admin) { echo '<a class="nav-link active" href="./panel.php">Panel</a>'; }?>
-                    <a class="nav-link" href="#">Help</a>
+                    <a class="nav-link" href="./help.php">Help</a>
                     <a class="nav-link" href="./faq.php">FAQ</a>
                     <a class="nav-link" href="./aboutus.php">About Us</a>
                 </div>
