@@ -71,6 +71,11 @@
     <link rel="stylesheet" href="css/nav.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        body {
+            margin: 0; /* Remove margin for the body */
+            padding: 0; /* Remove padding for the body */
+            padding-top: 3px; /* Add 12px padding to the top */
+        }
         /* Sidebar Styling */
         .sidebar {
             background-color: #f8f9fa; /* Light background for the sidebar */
@@ -101,6 +106,9 @@
         .sidebar i {
             margin-right: 10px; /* Space between icon and text */
         }
+        .navbar {
+             margin-bottom: 3px;
+        }
 
         /* White Theme for Buttons */
         .btn-edit,
@@ -109,6 +117,7 @@
             color: #000; /* Black text */
             font-weight: bold;
             border: 1px solid #000; /* Black border */
+            width: 80px;
         }
 
         /* Hover Effects */
@@ -147,6 +156,23 @@
         /* Spacing Between Buttons */
         .btn-sm {
             margin-right: 10px;
+        }
+
+        /* Main Content Styling */
+        main {
+            background-color: #ffffff; /* White background for main content */
+            padding: 20px; /* Padding for content */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            font-size: 16px; /* Font size from first code */
+        }
+
+        main h1 {
+            font-size: 30px; /* Slightly larger font size for headings */
+            margin-bottom: 20px; /* Space below the heading */
+            color: #343a40; /* Dark text color for the heading */
+            border-bottom: 1px solid #ddd; /* Thinner grey line under the heading */
+            padding-bottom: 15px; /* Added 5px more space between the line and the heading */
         }
     </style>
 </head>
@@ -238,6 +264,11 @@
             </main>
         </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
