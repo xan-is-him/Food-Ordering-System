@@ -1,4 +1,3 @@
-
 <?php 
 	require_once 'php/basic.php';
 	reqLogin();
@@ -46,12 +45,10 @@
 		</div>
 	</div>
 
-
-
-	<!-- Navbar Section starts -->
+<!-- Navbar Section starts -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
+			<a class="navbar-brand" href="./index.php"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -63,7 +60,7 @@
 					<?php if($admin){
 						echo '<a class="nav-link" href="./panel.php">Panel</a>';
 					}?>
-					<a class="nav-link" href="#">Help</a>
+					<a class="nav-link" href="./help.php">Help</a>
 					<a class="nav-link" href="./faq.php">FAQ</a>
 					<a class="nav-link" href="./aboutus.php">About Us</a>
 				</div>
@@ -80,7 +77,7 @@
 	</nav>
 	<!-- Navbar Section ends-->
 
-<!-- Food serach Section starts -->
+<!-- Food search Section starts -->
 <form class="d-flex justify-content-center align-items-center" action="./search.php" method="get" id="header">
 	<div class="col-md-7 p-2">
 		<input type="text" class="form-control form-control-lg" name="q" style="height: 45px;" placeholder="Search for food ...." />
@@ -194,6 +191,22 @@
 						</div>
 					</div>
 				</div>
+				<!-- New Food Item - Supreme Pizza -->
+				<div class="col-md-6 col-sm-12 mb-3">
+					<div class="card">
+						<div class="card-body row">
+							<div class="col-lg-4 col-md-12">
+								<img src="images/pizzamenu.jpg" alt="Supreme Pizza" class="img-fluid"/>
+							</div>
+							<div class="col-md-7">
+								<h4>Supreme Pizza</h4>
+								<p class="food-price">Rs.800</p>
+								<p class="food-detail">Loaded with many toppings</p><br>
+								<a href="./order.php?id=7" class="btn btn-primary"> order now</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
 
@@ -209,6 +222,24 @@
 	</div>
 </section>
 <!-- Social Section ends-->
+
+<!-- Footer section Section starts -->
+<footer>
+	<div class="container text-center">
+		<p>All rights reserved. Designed by <a href="#">Sujit Lama & Srijan Bagdas</a></p>
+	</div>
+</footer>
+<!-- Footer Section ends-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+		// Hide the loader after the page content has fully loaded
+		window.addEventListener('load', () => {
+			document.getElementById('loader').style.display = 'none';
+		});
+	</script>
+</body>
+</html>
 
 <!-- Footer section Section starts -->
 <footer>
