@@ -1,0 +1,14 @@
+#header {
+	min-height: 400px;
+    background-image: url("../img/header.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-overlay{
+    position: relative; 
+    top: -100px; 
+    text-decoration: none;
+    color: whitesmoke;
+}
