@@ -187,8 +187,20 @@
 			?>
 		</div>
 	</div>
+	
 </main>
-
+<footer class="bg-light py-4 mt-5">
+	<div class="container text-center">
+		<p class="mb-1">&copy; <?php echo date("Y"); ?> Food Ordering System. All rights reserved.</p>
+		<p>Designed & Developed by <a href="#">Sujit Lama & Srijan Bagdas</a></p>
+		<div class="d-flex justify-content-center gap-3 mt-2">
+			<a href="#"><img src="./img/facebook.png" alt="Facebook" width="30"></a>
+			<a href="#"><img src="./img/twitter.png" alt="Twitter" width="30"></a>
+			<a href="#"><img src="./img/instagram.png" alt="Instagram" width="30"></a>
+			
+		</div>
+	</div>
+</footer>
 <script>
 	window.addEventListener('load', () => {
 		document.getElementById('loader').style.display = 'none';
@@ -197,4 +209,3 @@
 
 </body>
 </html>
-
