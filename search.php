@@ -13,6 +13,45 @@
 		<link href="./css/nav.css" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			.card img {
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+				border-radius: 10px;
+				display: block;
+				margin: auto;
+			}
+
+			.row a img {
+				max-width: 70%;
+				height: auto;
+				display: block;
+				margin: auto;
+			}
+
+			.row a {
+				padding: 2rem 1rem;
+				text-align: center;
+			}
+
+			.card-body .col-md-7 {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: left;
+			}
+
+			.card-body .btn {
+				padding: 8px 15px;
+				font-size: 14px;
+				width: 110px;
+			}
+
+			.food-card {
+				margin-bottom: 35px;
+			}
+		</style>
 </head>
 <body>
 	<!-- Navbar Section starts -->
@@ -76,17 +115,17 @@
 				$image_name=$row["image_name"];
 				$price=$row["price"];
 				?>
-					<div class="col-md-6 col-sm-12 mb-3">
+					<div class="col-md-6 col-sm-12 food-card">
 						<div class="card">
 							<div class="card-body row">
 								<div class="col-lg-4 col-md-12">
-									<img src="images/<?php echo $image_name;?>" alt="name gen icon" class="img-fluid"/>
+									<img src="images/<?php echo $image_name;?>" alt="<?php echo $name; ?>" class="img-fluid"/>
 								</div>
 								<div class="col-md-7">
 									<h4><?php echo $name;?></h4>
 									<p class="food-price"><?php echo $price;?></p>
-									<p class="food-detail"><?php echo $description;?></p><br>
-									<a href="./order.php?id=<?php echo $id;?>" class="btn btn-primary"> order now</a>
+									<p class="food-detail"><?php echo $description;?></p>
+									<a href="./order.php?id=<?php echo $id;?>" class="btn btn-primary">Order Now</a>
 								</div>
 							</div>
 						</div>
@@ -100,15 +139,8 @@
 <footer class="bg-light py-4 mt-5">
 	<div class="container text-center">
 		<p class="mb-1">&copy; <?php echo date("Y"); ?> Food Ordering System. All rights reserved.</p>
-		<p>Designed & Developed by <a href="#">Sujit Lama & Srijan Bagdas</a></p>
-		<div class="d-flex justify-content-center gap-3 mt-2">
-			<a href="#"><img src="./img/facebook.png" alt="Facebook" width="30"></a>
-			<a href="#"><img src="./img/twitter.png" alt="Twitter" width="30"></a>
-			<a href="#"><img src="./img/instagram.png" alt="Instagram" width="30"></a>
-			
-		</div>
 	</div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
