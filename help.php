@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
         }
         .container {
@@ -31,6 +31,11 @@
             color: #333;
             text-align: center;
             margin-bottom: 20px;
+        }
+        .navbar, .navbar-nav .nav-link, .navbar-text {
+            font-family: Arial, sans-serif !important;
+            font-size: 1rem !important;
+            font-weight: normal !important;
         }
         .faq-category {
             font-size: 1.8rem;
@@ -73,8 +78,8 @@
             margin-top: 50px;
             padding: 20px 0;
             text-align: center;
-            background-color: #333;
-            color: white;
+            background-color: #f8f9fa;
+            color: #333;
         }
     </style>
 </head>
@@ -82,7 +87,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
+            <a class="navbar-brand" href="./index.php"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -123,11 +128,6 @@
             </div>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2025 Online Food Ordering System. All Rights Reserved.</p>
-    </footer>
-
     <script>
         document.querySelectorAll(".faq-question").forEach(button => {
             button.addEventListener("click", () => {
