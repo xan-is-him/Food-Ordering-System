@@ -136,11 +136,6 @@
 		</div>
 	</main>
 </div>
-<footer class="bg-light py-4 mt-5">
-	<div class="container text-center">
-		<p class="mb-1">&copy; <?php echo date("Y"); ?> Food Ordering System. All rights reserved.</p>
-	</div>
-</footer>
+
 </body>
 </html>
-
