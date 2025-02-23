@@ -73,19 +73,21 @@
             font-size: 20px;
             font-weight: bold;
         }
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            text-align: center;
-            background-color: #333;
-            color: white;
-        }
+      footer {
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
+            <a class="navbar-brand" href="./index.php"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -134,12 +136,7 @@
             </div>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2025 Online Food Ordering System. All Rights Reserved.</p>
-    </footer>
-
-    <script>
+  <script>
         document.querySelectorAll(".faq-question").forEach(button => {
             button.addEventListener("click", () => {
                 const answer = button.nextElementSibling;
@@ -148,5 +145,6 @@
             });
         });
     </script>
+
 </body>
 </html>
