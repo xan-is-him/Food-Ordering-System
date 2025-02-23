@@ -61,20 +61,21 @@
         .contact-section a:hover {
             text-decoration: underline;
         }
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            text-align: center;
-            background-color: #333;
-            color: white;
-        }
+    footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
+            <a class="navbar-brand" href="./index.php"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -84,7 +85,7 @@
                     <a class="nav-link" href="./search.php">Foods</a>
                     <a class="nav-link" href="./myOrders.php">My Orders</a>
                     <?php if($admin){ echo '<a class="nav-link" href="./panel.php">Panel</a>'; }?>
-                    <a class="nav-link" href="./help.php">Help</a>
+                    <a class="nav-link" href="help.php">Help</a>
                     <a class="nav-link" href="./faq.php">FAQ</a>
                     <a class="nav-link active" href="./aboutus.php">About Us</a>
                 </div>
@@ -104,12 +105,25 @@
             <h2>Contact Us</h2>
             <p>If you have any questions, suggestions, or require assistance, feel free to reach out to us:</p>
             <p>Email: <a href="mailto:support@foodorderingsystem.com">support@foodorderingsystem.com</a></p>
-            <p>Phone: +1 (555) 123-4567</p>
+            <p>Phone: +977 974XXXXXXX</p>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Online Food Ordering System. All Rights Reserved.</p>
-    </footer>
+   <footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-1">&copy; <?php echo date("Y"); ?> Food Ordering System. All rights reserved.</p>
+        <p>Designed & Developed by <a href="#">Sujit Lama & Srijan Bagdas</a></p>
+        <div class="d-flex justify-content-center gap-3 mt-2">
+            <a href="#"><img src="./img/facebook.png" alt="Facebook" width="30"></a>
+            <a href="#"><img src="./img/twitter.png" alt="Twitter" width="30"></a>
+            <a href="#"><img src="./img/instagram.png" alt="Instagram" width="30"></a>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+
 </body>
 </html>
