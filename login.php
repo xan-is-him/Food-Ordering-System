@@ -1,4 +1,4 @@
-<<?php
+<?php
     // Include the basic PHP functions and check if the user is logged in
     require_once 'php/basic.php';
     noLogined(); // Redirects to login if the user is not logged in
@@ -21,6 +21,40 @@
     
     <!-- Bootstrap CSS for responsive layout and components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(0%);
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .toggle-password img {
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+        }
+        .form-outline {
+            position: relative;
+        }
+        .form-control {
+            padding-right: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
 
@@ -49,12 +83,15 @@
                                     </div>
                                 </div>
                                 
-                                <!-- Password input field -->
+                                <!-- Password input field with toggle visibility -->
                                 <div class="row">
                                     <div class="col-md-12 mb-4 pb-2">
-                                        <div class="form-outline">
+                                        <div class="form-outline password-container">
                                             <label class="form-label" for="password">Password</label>
                                             <input type="password" id="password" name="password" class="form-control form-control-lg" required />
+                                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                                <img id="eye-icon" src="./img/eye.png" alt="Show/Hide">
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -78,5 +115,19 @@
 
     <!-- Bootstrap JS for components like dropdowns, modals, etc. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var eyeIcon = document.getElementById("eye-icon");
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.src = "./img/hide.png"; // Change icon to hide
+            } else {
+                passwordField.type = "password";
+                eyeIcon.src = "./img/eye.png"; // Change icon to show
+            }
+        }
+    </script>
 </body>
 </html>
