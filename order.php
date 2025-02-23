@@ -104,6 +104,7 @@
     </div>
   </div>
 </div>
+
 <script>
     function decrement() {
         var quantityInput = document.getElementById("quantity");
