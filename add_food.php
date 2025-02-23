@@ -214,10 +214,7 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="text-center mt-5 py-3 bg-light">
-        <p class="mb-0">© <?php echo date("Y"); ?> Your Company Name. All rights reserved.</p>
-    </footer>
+
 
     <!-- Include Bootstrap JS for interactivity -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
