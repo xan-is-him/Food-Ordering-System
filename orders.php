@@ -1,6 +1,6 @@
 <?php 
-	require_once 'php/basic.php';
-	reqAdmin();
+  require_once 'php/basic.php';
+  reqAdmin();
   require_once 'php/stats.php'; // To handle $currentPage and other stats if necessary.
 
   // Get the current page filename from the URL
@@ -10,14 +10,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Panel</title>
-		<link rel="icon" href="./img/icon.jpeg" type="image/x-icon">
-		<link href="./css/nav.css" rel="stylesheet">
-		<link href="./css/panel.css" rel="stylesheet">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel</title>
+    <link rel="icon" href="./img/icon.jpeg" type="image/x-icon">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/panel.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         /* Sidebar Styling */
         .sidebar {
@@ -52,7 +52,7 @@
     </style>
 </head>
 <body>
-	<!-- Navbar Section starts -->
+  <!-- Navbar Section starts -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="./img/icon1.jpg" alt="icon" id="icon"></a>
@@ -82,10 +82,10 @@
       </div>
     </div>
   </nav>
-	<!-- Navbar Section ends-->
+  <!-- Navbar Section ends-->
 
 <main>
-	<div class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
       <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
@@ -127,54 +127,51 @@
         </div>
 
         <div class="row">
-				<?php
-					require_once 'php/dbconnect.php';
+        <?php
+          require_once 'php/dbconnect.php';
 
-					$sql = "SELECT o.order_id, o.quantity, o.cost, o.status, u.name AS user_name, f.name AS food_name 
-							FROM Orders o
-							INNER JOIN Users u ON o.user_id = u.user_id
-							INNER JOIN Foods f ON o.food_id = f.food_id";
-					$result = $conn->query($sql);
+          $sql = "SELECT o.order_id, o.quantity, o.cost, o.status, u.name AS user_name, f.name AS food_name 
+              FROM Orders o
+              INNER JOIN Users u ON o.user_id = u.user_id
+              INNER JOIN Foods f ON o.food_id = f.food_id";
+          $result = $conn->query($sql);
 
-					if ($result->num_rows > 0) {
-						echo '<table class="table table-striped">';
-						echo '<thead>';
-						echo '<th>order ID</th>';
-						echo '<th>User Name</th>';
-						echo '<th>Food Name</th>';
-						echo '<th>Quantity</th>';
-						echo '<th>Cost</th>';
-						echo '<th>Status</th>';
-						echo '</thead>';
-						while ($row = $result->fetch_assoc()) {
-							echo '<tr>';
-							echo '<td>'.$row["order_id"].'</td>';
-							echo '<td>'.$row["user_name"].'</td>';
-							echo '<td>'.$row["food_name"].'</td>';
-							echo '<td>'.$row["quantity"].'</td>';
-							echo '<td>'.$row["cost"].'</td>';
-							echo '<td>'.$row["status"].'</td>';
-							if ($admin) {
-								echo '<td> <a href="./editOrder.php?id='.$row["order_id"].'"><button class="btn btn-primary">Edit</button>';
-								echo '<a href="./removeOrder.php?id='.$row["order_id"].'"><button class="btn btn-danger">Remove</button></td>';
-							}
-							echo '</tr>';
-						}
-						echo '<table>';
-					} else {
-						echo "No Orders";
-					}
-				?>
+          if ($result->num_rows > 0) {
+            echo '<table class="table table-striped">';
+            echo '<thead>';
+            echo '<th>order ID</th>';
+            echo '<th>User Name</th>';
+            echo '<th>Food Name</th>';
+            echo '<th>Quantity</th>';
+            echo '<th>Cost</th>';
+            echo '<th>Status</th>';
+            echo '</thead>';
+            while ($row = $result->fetch_assoc()) {
+              echo '<tr>';
+              echo '<td>'.$row["order_id"].'</td>';
+              echo '<td>'.$row["user_name"].'</td>';
+              echo '<td>'.$row["food_name"].'</td>';
+              echo '<td>'.$row["quantity"].'</td>';
+              echo '<td>'.$row["cost"].'</td>';
+              echo '<td>'.$row["status"].'</td>';
+              if ($admin) {
+                echo '<td> <a href="./editOrder.php?id='.$row["order_id"].'"><button class="btn btn-primary">Edit</button>';
+                echo '<a href="./removeOrder.php?id='.$row["order_id"].'"><button class="btn btn-danger">Remove</button></td>';
+              }
+              echo '</tr>';
+            }
+            echo '<table>';
+          } else {
+            echo "No Orders";
+          }
+        ?>
         </div>
       </main>
     </div>
   </div>
 </main>
-				
-<footer>
+        
 
-</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
