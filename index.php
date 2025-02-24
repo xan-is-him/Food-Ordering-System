@@ -152,43 +152,45 @@
 </header>
 
 <!-- Food Menu Section -->
-<main class="p-4">
-	<h3 class="text-center p-4">Explore Foods</h3>
-	<div class="container">
+<main class="container">
 		<div class="row">
-			<?php 
-			$foods = [
-				["image" => "images/burgermenu.jpg", "name" => "Basic Burger", "price" => "Rs.400", "detail" => "A simple patty cheese burger"],
-				["image" => "images/pastamenu.jpg", "name" => "Cheese Pasta", "price" => "Rs.550", "detail" => "With heavy loaded cheese"],
-				["image" => "images/pizzamenu2.jpg", "name" => "Basic Magaritta Pizza", "price" => "Rs.750", "detail" => "Made with different types of cheese"],
-				["image" => "images/burgermenu2.jpg", "name" => "Double Cheese Burger", "price" => "Rs.500", "detail" => "A double patty cheeseburger with a toasted bun"],
-				["image" => "images/pasta2.jpg", "name" => "Double Cheese Pasta", "price" => "Rs.500", "detail" => "Made with two types of cheese"],
-				["image" => "images/pizzamenu.jpg", "name" => "Supreme Pizza", "price" => "Rs.800", "detail" => "Loaded with many toppings"]
-			];
-
-			foreach ($foods as $food) {
-				echo '
-				<div class="col-md-6 col-sm-12 food-card">
-					<div class="card">
-						<div class="card-body row">
-							<div class="col-lg-4 col-md-12">
-								<img src="'.$food["image"].'" alt="'.$food["name"].'" class="img-fluid"/>
-							</div>
-							<div class="col-md-7">
-								<h4>'.$food["name"].'</h4>
-								<p class="food-price">'.$food["price"].'</p>
-								<p class="food-detail">'.$food["detail"].'</p>
-								<a href="./order.php?id=2" class="btn btn-primary">Order Now</a>
+			<?php
+			require_once 'php/dbconnect.php';
+			
+			$q = $_GET['q'] ?? "";
+			$q = "%$q%";
+			$sql = "SELECT food_id, name, description, image_name, price, details FROM Foods WHERE name LIKE ?";
+			$stmt = $conn->prepare($sql);
+			$stmt->bind_param("s", $q);
+			$stmt->execute();
+			$result = $stmt->get_result();
+			while ($row = $result->fetch_assoc()) {
+				$id=$row["food_id"];
+				$name=$row["name"];
+				$description=$row["description"];
+				$image_name=$row["image_name"];
+				$price=$row["price"];
+				?>
+					<div class="col-md-6 col-sm-12 food-card">
+						<div class="card">
+							<div class="card-body row">
+								<div class="col-lg-4 col-md-12">
+									<img src="images/<?php echo $image_name;?>" alt="<?php echo $name; ?>" class="img-fluid"/>
+								</div>
+								<div class="col-md-7">
+									<h4><?php echo $name;?></h4>
+									<p class="food-price"><?php echo $price;?></p>
+									<p class="food-detail"><?php echo $description;?></p>
+									<a href="./order.php?id=<?php echo $id;?>" class="btn btn-primary">Order Now</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>';
+					<?php
 			}
 			?>
 		</div>
-	</div>
-	
-</main>
+	</main>
 <footer class="bg-light py-4 mt-5">
 	<div class="container text-center">
 		<p class="mb-1">&copy; <?php echo date("Y"); ?> Food Ordering System. All rights reserved.</p>
